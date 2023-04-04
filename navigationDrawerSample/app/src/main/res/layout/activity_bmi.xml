@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+
+    android:gravity="center"
+    android:id="@+id/linerarmain"
+
+    tools:context=".BMI">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/bbmi"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="130dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bbmi" />
+
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ht_weight"
+        android:layout_marginTop="4dp"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/ftheight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/ht_heightft"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/inheight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/ht_heightin"
+        />
+
+    <Button
+        android:id="@+id/BMIbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/bt_BMI"
+        android:shadowColor="@color/black"
+        android:textColor="@color/teal_200"
+        android:backgroundTint="#000000"
+        />
+
+    <TextView
+        android:id="@+id/Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textSize="20dp"
+        android:textColor="#000000" />
+</LinearLayout>

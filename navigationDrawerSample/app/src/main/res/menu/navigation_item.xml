@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <item
+       android:id="@+id/BMI"
+       android:title="BMI"
+       android:icon="@drawable/track1"/>
+    <item
+        android:id="@+id/pedd"
+        android:title="Pedo Meter"
+        android:icon="@drawable/walk"/>
+    <item
+        android:id="@+id/wc"
+        android:title="Whether Forcasting"
+        android:icon="@drawable/wt"/>
+    <item
+        android:id="@+id/medRm"
+        android:title="Medicine Reminder"
+        android:icon="@drawable/medicine_reminder"/>
+    <item
+        android:id="@+id/notes"
+        android:title="Add Notes"
+        android:icon="@drawable/baseline_notes_24"/>
+</menu>
