@@ -17,9 +17,6 @@
         android:theme="@style/Theme.NavigationDrawerSample"
         tools:targetApi="31">
         <activity
-            android:name=".WeatherForecast"
-            android:exported="false" />
-        <activity
             android:name=".Pedometer"
             android:exported="false" />
         <activity

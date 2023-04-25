@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "461081844582",
+    "project_id": "navigationdrawersample-1ed01",
+    "storage_bucket": "navigationdrawersample-1ed01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461081844582:android:dd97b1f7bd2264e5e546a7",
+        "android_client_info": {
+          "package_name": "com.example.navigationdrawersample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461081844582-an6ghd4i87j6cgerktdql1bia7jlfuv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK3wKMAMSDNnmM68AA-MgrEv3J2SM--70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461081844582-an6ghd4i87j6cgerktdql1bia7jlfuv0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

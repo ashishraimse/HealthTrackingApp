@@ -11,16 +11,24 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
   Toolbar toolbar;
   DrawerLayout drawerLayout;
   NavigationView navigationView;
+  public ImageView USER_IMAGE;
+  public TextView USER_NAME_MAIL;
 
 
     @Override
@@ -30,33 +38,38 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout=findViewById(R.id.drawerlayout);
         navigationView=findViewById(R.id.navigationview);
         toolbar=findViewById(R.id.toolbar);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String name = user.getDisplayName();
+        String email = user.getEmail();
+        String profileImage = user.getPhotoUrl().toString();
+
         //step 1
         setSupportActionBar(toolbar);
+        View headerView = navigationView.getHeaderView(0);
+        USER_IMAGE = headerView.findViewById(R.id.userProfileImage);
+        USER_NAME_MAIL = headerView.findViewById(R.id.userName);
+        USER_NAME_MAIL.setText(name + "\n" + email);
+        USER_IMAGE.setImageURI(Uri.parse(profileImage));
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.opendrawer,R.string.closedrawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
 
-         // Navigation items
-         // All these items are added in the navigation_item.xml we are identifying them by their Id's
-         // This listener is used to identifying them, which activity need to be open
+        //
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                // Id of selected Item is within id
                 int id=item.getItemId();
-
-                // For BMI Activity
                 if(id==R.id.BMI)
                 {
                     Toast.makeText(MainActivity.this, "BMI", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this,BMI.class));
+                    Intent intent=new Intent(MainActivity.this,BMI.class);
+                    startActivity(intent);
                 }
                 else if (id==R.id.wc)
                 {
-                    Toast.makeText(MainActivity.this, "Weather Forecast", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this,WeatherForecast.class));
+                    Toast.makeText(MainActivity.this, "Shubham's Task", Toast.LENGTH_SHORT).show();
 
                 }
                 else if(id == R.id.medRm)
@@ -72,12 +85,11 @@ public class MainActivity extends AppCompatActivity {
                 {
                     startActivity(new Intent(MainActivity.this,Pedometer.class));
                 }
-                else{
+                else
+                {
                     Toast.makeText(MainActivity.this, "abhaddf", Toast.LENGTH_SHORT).show();
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
-
-
 
                 return true;
             }
